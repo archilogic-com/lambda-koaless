@@ -42,8 +42,10 @@ router.use(async (ctx, next) => {
   const ms = Date.now() - start
   ctx.set('X-Response-Time', `${ms}ms`)
 });
+
 // parse body
 router.use(bodyParser())
+
 // handle route
 router.get('/hello-world', (ctx, next) => {
   console.log(ctx.request.body) // parsed body
